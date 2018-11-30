@@ -5,11 +5,15 @@
   "main": "src/index.js",
   "dependencies": {
     "dotenv": "^6.1.0",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pm2": "^3.2.2"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node src/index.js"
+    "start": "pm2 start src/index.js --name \"node_web_server\"",
+    "stop": "pm2 delete \"node_web_server\"",
+    "restart": "pm2 restart \"node_web_server\"",
+    "log": "pm2 log \"node_web_server\""
   },
   "repository": {
     "type": "git",
