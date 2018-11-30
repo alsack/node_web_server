@@ -12,9 +12,6 @@ const rootDir = path.resolve(__dirname, '../..'); //the root of the node_web_ser
  * router must be a express.Router() object.
  */
 
-const routes = [{
-    path: '/coursera-bootstrap-react',
-    router: path.resolve(rootDir, '../coursera-bootstrap-react/src/server/web/router')
-}];
+const routes = [];
 
 module.exports = routes;
