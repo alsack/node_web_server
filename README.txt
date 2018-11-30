@@ -11,3 +11,9 @@ Launches a server that can be configured to serve web content for multiple proje
 3) Add the projects for the server to serve in 'src/web/routes.js'.  
     3.1) As described in the routes.js file, other projects must export an express.Router() object that this project will call to perform project-specific routing.
     3.2) See example code for chained express routers https://stackoverflow.com/questions/23638354/express-router-param-chaining-with-url
+    
+Note: You can also use this project as a component of another project to start a server by installing ('npm install https://github.com/alsack/node_web_server.git'), setting the env variables as described above, and using code similar to:
+    //launch server
+    const node_web_server = require('node_web_server/src/index.js');
+    //add routes
+    node_web_server.app.use('/', (req, res, next) => { ... });
