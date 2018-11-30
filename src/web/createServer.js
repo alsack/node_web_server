@@ -33,7 +33,7 @@ module.exports = function createServer(port, sslKeys) {
 function createHttpsServer(sslKeys, app) {
   const https = require('https');
 
-  if(process.env.HTTP_REDIRECT === true) {
+  if(process.env.HTTP_REDIRECT === 'true') {
     const httpPort = process.env.HTTP_REDIRECT_PORT;
     //create http server and redirect all traffic to https
     const httpApp = express();
