@@ -39,7 +39,7 @@ function createHttpsServer(sslKeys, app) {
     const httpApp = express();
     // set up a route to redirect http to https
     httpApp.use('*', function (req, res, next) {
-      res.redirect('https://' + req.headers.host + req.url);
+      res.redirect('https://' + req.hostname + req.originalUrl);
     });
     // have it listen on the specified port
     httpApp.listen(httpPort, (err) => {
