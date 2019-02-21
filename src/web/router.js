@@ -20,10 +20,8 @@ module.exports = function(app) {
     //if the request is an exact match to the proxy target
     //re-route to the same target with a trailing slash.
     app.use(route.path, (req, res, next) => {
-      console.log(req.originalUrl + ' vs. ' + route.path);
       if(req.originalUrl === route.path) {
         var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-        console.log(fullUrl);
         res.redirect(fullUrl + '/');
       }
       next();
