@@ -1,15 +1,18 @@
 const path = require('path');
-const rootDir = path.resolve(__dirname, '../..'); //the root of the node_web_server project.
 
 /**
  * This module defines the routes to different projects. It exports an Array of objects
- * defining the route path, and the router for that application.  Example:
+ * defining the route path, and the http-proxy-midleware options to route to that application.  
+ * Example:
  * {
  *      path: '/example',
- *      router: path.resolve(rootDir, '../ExampleProject/src/web/router.js')
+ *      proxyOpts: {
+ *        target: 'http://localhost:5000'
+ *      }
  * }
- * In this example, 'path' is the route path for the root express app.
- * router must be a express.Router() object.
+ * In this example, 'path' is the route used to access the target.
+ * proxyOpts is the proxy options for the http-proxy-middleware module.
+ * ("localhost:8080/example" -> "localhost:5000")
  */
 
 const routes = [];
