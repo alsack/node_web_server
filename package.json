@@ -2,12 +2,9 @@
   "name": "node_web_server",
   "version": "1.0.0",
   "description": "server utility to serve generic web content",
-  "main": "src/index.js",
+  "main": "src/createServer.js",
   "dependencies": {
-    "child_process": "^1.0.2",
-    "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "http-proxy-middleware": "^0.19.1",
     "pm2": "^3.2.2"
   },
   "devDependencies": {},
