@@ -2,18 +2,19 @@
   "name": "node_web_server",
   "version": "1.0.0",
   "description": "server utility to serve generic web content",
-  "main": "src/createServer.js",
+  "main": "src/index.js",
   "dependencies": {
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "pm2": "^3.2.2"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "pm2 start src/index.js --name \"node_web_server\"",
     "stop": "pm2 delete \"node_web_server\"",
     "restart": "pm2 restart \"node_web_server\"",
     "log": "pm2 log \"node_web_server\"",
-    "flush": "pm2 flush \"node_web_server\""
+    "flush": "pm2 flush \"node_web_server\"",
+    "test": "pm2 start test/index.js --name \"node_web_server\""
   },
   "repository": {
     "type": "git",
